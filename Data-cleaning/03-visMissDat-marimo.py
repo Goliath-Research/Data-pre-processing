@@ -381,7 +381,7 @@ def _(mo):
     mo.md(r"""
     ## Matrix
 
-    `missingno.matrix` draws each present value as a mark and each hole as a gap. The sparkline on the right runs from 0 present columns at the left to every column present at the right. A row whose sparkline is at the far right is complete. A row with more holes moves left.
+    `missingno.matrix` draws each present value as a mark and each hole as a gap. The sparkline on the right runs from the fewest present columns in any row, at the left, to the most, at the right. The two numbers printed beside it are those two counts. A row whose sparkline is at the far right is complete. A row with more holes moves left.
     """)
     return
 

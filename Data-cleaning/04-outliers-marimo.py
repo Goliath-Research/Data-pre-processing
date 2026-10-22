@@ -141,7 +141,7 @@ def _(mo):
     mo.md(r"""
     ## Boxplots and the interquartile range
 
-    A boxplot draws the median, the middle half of the data, and whiskers. Points beyond the whiskers are drawn one by one. The next two charts are the same chart: the default whisker and `whis=1.5`.
+    A boxplot draws the median, the middle half of the data, and whiskers. Points beyond the whiskers are drawn one by one. The first chart shows all three columns. The next two horsepower charts are the same chart: the default whisker and `whis=1.5`.
     """)
     return
 

@@ -279,7 +279,7 @@ def _(df):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    The median age is 17, and the median GPA is 3. The median is the middle present value, so it does not move when a value is unusually high or low.
+    The median age is 17, and the median GPA is 3. The median is the middle present value, so one unusually high or low value does not pull it the way it pulls the mean.
     """)
     return
 
