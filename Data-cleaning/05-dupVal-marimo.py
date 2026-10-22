@@ -32,7 +32,7 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # Fixing formatting and removing duplicates
+    # Fixing Formatting and Removing Duplicates
 
     ## Objectives
 
@@ -49,7 +49,7 @@ def _(mo):
 
     ## Datasets Used
 
-    - **A made-up table** of 13 people, with messy names, sexes, one impossible age, one impossible score, and repeated rows.
+    - **A made-up table** of 13 rows, with messy names, sexes, one impossible age, one impossible score, and repeated rows.
     """)
     return
 
@@ -186,8 +186,6 @@ def _():
 def _(mo):
     mo.accordion({"Show answers": mo.md(r'''
 ```python
-import pandas as pd
-
 student_name = pd.Series(["  aNnA "]).str.strip().str.capitalize()
 ```
 **`Anna`.** `strip` removes the spaces. `capitalize` keeps `A` and lowers `NnA`.
@@ -371,7 +369,7 @@ def _(mo):
     mo.md(r"""
     ## Score
 
-    The score -1 sits away from the other scores. It belongs to the third Anna, at index 10. A score on this table is not negative, and there is no source to check, so -1 becomes missing.
+    The score -1 sits away from the other scores. It belongs to the third Anna, at index 10. A score in this table cannot be negative, and there is no source to check, so -1 becomes missing.
     """)
     return
 
