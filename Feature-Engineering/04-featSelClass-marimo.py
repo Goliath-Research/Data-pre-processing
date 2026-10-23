@@ -101,7 +101,7 @@ def _(df):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Each predictor is balanced or nearly balanced. `car_class` is not: most cars are unacceptable.
+    Each predictor is balanced: every value appears the same number of times. `car_class` is not: most cars are unacceptable.
     """)
     return
 
@@ -113,6 +113,7 @@ def _(df, plt):
     for _axis, _name in zip(_axes.ravel(), predictor_names):
         df[_name].value_counts().plot(kind="bar", rot=0, ax=_axis, title=_name)
     _figure.tight_layout()
+    _figure
     return _figure, predictor_names
 
 
@@ -260,7 +261,7 @@ def _(mo):
     mo.md(r"""
     ## SelectFwe and SelectFpr
 
-    `SelectFwe` uses a family-wise cutoff. `SelectFpr` uses each column's own p-value. With chi-square, both drop `doors` and keep the other five predictors. That matches the contingency test, where `doors` was the column whose p-value was above 0.05.
+    `SelectFwe` uses a family-wise cutoff. `SelectFpr` uses each column's own p-value. With chi-square, `SelectFwe` at `alpha=0.05` and `SelectFpr` at `alpha=0.001` both drop `doors` and keep the other five predictors. That matches the contingency test, where `doors` was the column whose p-value was above 0.05.
 
     Five columns are shown as HTML.
     """)

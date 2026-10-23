@@ -122,7 +122,7 @@ def _(auto_file, headers, mo, pd):
 
 @app.cell
 def _(df_raw):
-    print(df_raw.isnull().sum())
+    print(df_raw.isnull().sum().to_string())
     return
 
 
@@ -196,6 +196,7 @@ def _(predictors):
     _axes = predictors.boxplot(figsize=(14, 5), color="blue")
     _axes.set_title("Original predictors")
     _axes.tick_params(axis="x", labelrotation=45)
+    _axes
     return _axes.figure
 
 
@@ -222,6 +223,7 @@ def _(scaled):
     _axes = scaled.boxplot(figsize=(14, 5), color="green")
     _axes.set_title("Standardized predictors")
     _axes.tick_params(axis="x", labelrotation=45)
+    _axes
     return _axes.figure
 
 
@@ -284,6 +286,7 @@ def _(np, pca):
         print(
             f"Component {_number:2d}    variance {_ratio * 100:6.2f}%    cumulative {_total * 100:6.2f}%"
         )
+    print(pca.explained_variance_.round(3))
     return component_number, cumulative
 
 
@@ -303,6 +306,7 @@ def _(component_number, cumulative, pca, plt):
     _axes[1].set_ylabel("Explained variance ratio")
     _axes[1].set_title("Variance of each component")
     _figure.tight_layout()
+    _figure
     return _figure
 
 
@@ -397,7 +401,7 @@ def _(mo):
     mo.md(r"""
     ## How the original columns enter the components
 
-    `components_` holds the weights. The table has one row per original predictor and one column per factor. A large weight, positive or negative, means that predictor pulls that factor. The heatmap is the same table.
+    `components_` holds the weights, one row per factor. The table turns it around, so it has one row per original predictor and one column per factor. A large weight, positive or negative, means that predictor pulls that factor. The heatmap is the same table.
     """)
     return
 
@@ -409,7 +413,7 @@ def _(pca_80, pd):
         index=pca_80.feature_names_in_,
         columns=["f1", "f2", "f3", "f4"],
     )
-    print(loadings.round(3))
+    print(loadings.round(3).to_string())
     return (loadings,)
 
 

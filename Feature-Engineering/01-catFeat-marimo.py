@@ -382,8 +382,8 @@ def _(car_file, mo, pd):
 
 @app.cell
 def _(car):
-    print(car.buying.unique())
-    print(car.maint.unique())
+    print(list(car.buying.unique()))
+    print(list(car.maint.unique()))
     return
 
 

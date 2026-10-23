@@ -279,7 +279,7 @@ def _(SelectFwe, Xnum, f_regression, y):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    `alpha=0.01` is stricter. The same 10 columns are tested again, and `height` is dropped as well. Nine columns remain.
+    `alpha=0.01` is stricter. All 15 columns are tested again. The result is the same 10 columns without `height`. Nine columns remain.
     """)
     return
 
