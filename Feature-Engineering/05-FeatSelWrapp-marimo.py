@@ -221,7 +221,7 @@ def _(LinearRegression, SFS, Xnum, subset_table, y):
     )
     backward.fit(Xnum, y)
     backward_table = subset_table(backward.subsets_)
-    print(backward_table)
+    print(backward_table.to_string())
     return backward, backward_table
 
 
@@ -450,7 +450,7 @@ def _(mo):
     mo.md(r"""
     ## References
 
-    - Albon, C. (2018). *Python Machine Learning Cookbook: Practical Solutions from Preprocessing to Deep Learning*. O'Reilly Media. Chapter 10.
+    - Albon, C. (2018). *Machine Learning with Python Cookbook: Practical Solutions from Preprocessing to Deep Learning*. O'Reilly Media. Chapter 10.
     - [mlxtend feature selection](http://rasbt.github.io/mlxtend/api_subpackages/mlxtend.feature_selection/)
     """)
     return
